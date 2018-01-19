@@ -11,8 +11,8 @@
 #Packages
 #-------------------------------------------------------------------------------
 
-library("lubridate")
-library("tidyverse")
+#library("lubridate")
+#library("tidyverse")
 
 #-------------------------------------------------------------------------------
 #Data
@@ -23,7 +23,7 @@ library("tidyverse")
 
 # You need to specify your station id to run the function.
 
-ID <-  2638
+#ID <-  2638
 
 #-------------------------------------------------------------------------------
 #Function
@@ -31,6 +31,8 @@ ID <-  2638
 
 SDII <-  function(data, ID) {
   
+require(lubridate)
+require(tidyverse)
 
 data <- 
     data %>%
@@ -67,4 +69,4 @@ return(list(rate_change =diff, total_mean = mw, data = data))
 #Index 2 (rate_change) [%] and a data frame with the number of rain days for every
 #year at your station
 
-result <- SDII(raw_data,ID)
+#result <- SDII(raw_data,ID)
